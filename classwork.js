@@ -16,6 +16,25 @@ const classAssignments = [
 },
 
 {
+  title: "Assignment 1: Improving AI Responses with RISEN",
+  description: "Using the RISEN framework to improve AI responses.",
+  category: "AI Prompting",
+  url: "assignments/AI%20Responses%20with%20RISEN%201.docx"
+},
+{
+  title: "Assignment 2: Industry-Specific Prompting",
+  description: "Applying AI prompting to a specific industry.",
+  category: "AI Prompting",
+  url: "assignments/Industry%20Specific%20Prompting%202.docx"
+},
+{
+  title: "Assignment 3: Testing and Refining Prompts",
+  description: "Testing and improving prompts using AI tools.",
+  category: "AI Prompting",
+  url: "assignments/risen%20promt.png"
+},
+
+{
   title: "Chapter 5 Exercises",
   description: "JavaScript Chapter 5 exercises 1 through 5.",
   category: "JavaScript",
