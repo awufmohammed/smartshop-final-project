@@ -16,6 +16,13 @@ const classAssignments = [
 },
 
 {
+  title: "Chapter 5 Exercises",
+  description: "JavaScript Chapter 5 exercises 1 through 5.",
+  category: "JavaScript",
+  url: "assignments/chapter5.html"
+},
+
+{
   title: "CSS Navigation",
   description: "My CSS navigation assignment.",
   category: "HTML · CSS",
