@@ -14,3 +14,6 @@
 /* Allow 12 slide navigation dots to wrap on small screens */
 .slider-dots{flex-wrap:wrap;justify-content:center;max-width:75%}.slider-bottom{min-height:58px}
 @media(max-width:520px){.slider-dot{width:11px;height:11px}.slider-dots{gap:6px;max-width:68%}}
+
+/* Class Work portfolio */
+.classwork-hero{background:#eaf3ff;padding:62px 0 54px}.classwork-hero h1{margin:10px 0 12px;color:#142d4e;font-size:clamp(2rem,5vw,3.5rem)}.classwork-hero p:last-child{color:#41546a;max-width:650px}.classwork-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:22px}.classwork-card{background:white;border:1px solid #dbe6f1;border-radius:16px;padding:26px;box-shadow:0 5px 20px #142d4e0b;display:flex;flex-direction:column;align-items:flex-start;gap:12px}.classwork-card h3{margin:0;color:#142d4e;font-size:1.3rem}.classwork-card p{margin:0 0 10px;color:#53647a;line-height:1.6;flex:1}.classwork-card .button{margin-top:auto}.work-category{font-size:.78rem;font-weight:700;color:#195ba5;background:#eaf3ff;border-radius:99px;padding:7px 12px}.work-count{color:#53647a;font-size:.9rem}@media(max-width:600px){.classwork-hero{padding:40px 0}.classwork-card{padding:20px}}
