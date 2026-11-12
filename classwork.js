@@ -7,6 +7,13 @@ const classAssignments = [
     category: "JavaScript",
     url: "mpg.html"
   },
+  
+{
+  title: "Creating a Budget in MS Word with Tables",
+  description: "My completed budget assignment using Microsoft Word tables.",
+  category: "Microsoft Word",
+  url: "assignments/budget%20breakdown.docx"
+},
   {
     title: "Automatic Image Slider",
     description: "A responsive image gallery with automatic playback and navigation controls.",
