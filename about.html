@@ -3,80 +3,142 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us | SmartShop</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    .info-wrap {
+    .about-container {
       max-width: 1000px;
-      margin: 40px auto;
-      padding: 20px;
+      margin: 35px auto;
+      padding: 0 20px;
     }
-    .info-card {
-      background: #fff;
-      color: #222;
+
+    .about-container h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .about-section {
+      background: #ffffff;
       padding: 25px;
-      margin: 20px 0;
+      margin-bottom: 20px;
       border-radius: 12px;
-      box-shadow: 0 2px 12px #0001;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
     }
-    .site-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      padding: 15px;
-      background: #142c49;
+
+    .about-section h2 {
+      color: #1e3a5f;
+      margin-bottom: 12px;
     }
-    .site-links a { color: white; text-decoration: none; }
-    .site-links a:hover { text-decoration: underline; }
+
+    .about-section p,
+    .about-section li {
+      line-height: 1.8;
+      color: #444;
+    }
+
+    .about-section ul {
+      padding-left: 25px;
+    }
   </style>
 </head>
+
 <body>
+
   <header>
     <h1>SmartShop Online Store</h1>
-    <nav class="site-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="products.html">Products</a>
-      <a href="applications.html">Applications</a>
-      <a href="contact.html">Contact</a>
-    </nav>
   </header>
 
-  <main class="info-wrap">
-    <h2>About SmartShop</h2>
+  <nav aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="about.html" aria-current="page">About</a>
+    <a href="products.html">Products</a>
+    <a href="applications.html">Applications</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-    <section class="info-card">
-      <h3>Who We Are</h3>
-      <p>SmartShop is an online store project designed
-      to help students and young adults explore
-      affordable electronics and computer accessories.</p>
+  <main class="about-container">
+
+    <h1>About SmartShop</h1>
+
+    <section class="about-section">
+      <h2>Who We Are</h2>
+      <p>
+        SmartShop is an online store project designed to help
+        students and young adults explore affordable electronics
+        and computer accessories. We want to make shopping
+        simple, organized, and convenient.
+      </p>
     </section>
 
-    <section class="info-card">
-      <h3>Our Mission</h3>
-      <p>Our mission is to make technology easier
-      to explore by providing a simple, organized,
-      and user-friendly shopping experience.</p>
+    <section class="about-section">
+      <h2>Our Mission</h2>
+      <p>
+        Our mission is to make technology easier to explore
+        by providing a simple, organized, and user-friendly
+        shopping experience.
+      </p>
     </section>
 
-    <section class="info-card">
-      <h3>What We Offer</h3>
-      <p>Our product catalog features electronics,
-      accessories, and technology products. We also
-      provide interactive tools that demonstrate
-      how JavaScript can help users make calculations.</p>
+    <section class="about-section">
+      <h2>What We Offer</h2>
+      <p>
+        SmartShop features electronics and accessories that
+        can be useful for school, work, entertainment,
+        and everyday activities.
+      </p>
     </section>
 
-    <section class="info-card">
-      <h3>About This Project</h3>
-      <p>This website is a course prototype built
-      using HTML, CSS, and JavaScript. It demonstrates
-      website design, navigation, product presentation,
-      and interactive applications.</p>
+    <section class="about-section">
+      <h2>Why Choose SmartShop?</h2>
+      <p>
+        SmartShop focuses on affordability, simplicity,
+        and convenience. Our website makes it easy for
+        visitors to browse different products, compare
+        options, and explore useful technology.
+      </p>
     </section>
+
+    <section class="about-section">
+      <h2>Our Products</h2>
+      <p>Our product categories include:</p>
+      <ul>
+        <li>Laptops and computer accessories</li>
+        <li>Headphones and speakers</li>
+        <li>Keyboards and computer mice</li>
+        <li>Phone accessories</li>
+        <li>Other useful electronics</li>
+      </ul>
+    </section>
+
+    <section class="about-section">
+      <h2>Who We Serve</h2>
+      <p>
+        SmartShop is designed for college students,
+        young adults, and people who want to explore
+        affordable technology. Our goal is to make
+        browsing products easy for everyone.
+      </p>
+    </section>
+
+    <section class="about-section">
+      <h2>Our Future Goals</h2>
+      <p>
+        In the future, we plan to improve SmartShop
+        by adding more products, better search tools,
+        and additional interactive features. Our
+        long-term goal is to develop a complete
+        online shopping experience.
+      </p>
+    </section>
+
   </main>
 
-  <footer><p>SmartShop Online Store</p></footer>
+  <footer>
+    <p>&copy; 2026 SmartShop Online Store</p>
+  </footer>
+
 </body>
 </html>
+
