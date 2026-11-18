@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mortgage Calculator | SmartShop</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .mortgage-nav {
+    background: #142c49;
+    padding: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .mortgage-nav a {
+    color: white;
+    text-decoration: none;
+  }
+  .calculator {
+    max-width: 550px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    color: #222;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px #0002;
+  }
+  .calculator label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: bold;
+  }
+  .calculator input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+  }
+  .calculator button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: #142c49;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  #result {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>SmartShop Online Store</h1>
+</header>
+
+<nav class="mortgage-nav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="products.html">Products</a>
+  <a href="applications.html">Applications</a>
+  <a href="classwork.html">Class Work</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<main>
+  <section class="calculator">
+    <h2>Mortgage Calculator</h2>
+    <p>Calculate your estimated monthly
+    mortgage principal and interest payment.</p>
+
+    <label for="loan">Loan Amount ($)</label>
+    <input type="number" id="loan"
+      min="0.01" step="0.01" placeholder="200000">
+
+    <label for="rate">Annual Interest Rate (%)</label>
+    <input type="number" id="rate"
+      min="0" step="0.01" placeholder="6">
+
+    <label for="years">Loan Term (Years)</label>
+    <input type="number" id="years"
+      min="1" step="1" placeholder="30">
+
+    <button type="button" onclick="calculateMortgage()">
+      Calculate Payment
+    </button>
+
+    <p id="result" aria-live="polite"></p>
+    <p>Note: This estimate does not include
+    property taxes, insurance, or other fees.</p>
+  </section>
+</main>
+
+<script>
+function calculateMortgage() {
+  let loanInput = document.getElementById("loan").value;
+  let rateInput = document.getElementById("rate").value;
+  let yearsInput = document.getElementById("years").value;
+
+  let loan = Number(loanInput);
+  let annualRate = Number(rateInput);
+  let years = Number(yearsInput);
+  let result = document.getElementById("result");
+
+  if (loanInput === "" || rateInput === "" ||
+      yearsInput === "" || !Number.isFinite(loan) ||
+      !Number.isFinite(annualRate) ||
+      !Number.isInteger(years) ||
+      loan <= 0 || annualRate < 0 || years <= 0) {
+    result.textContent = "Please enter valid values.";
+    return;
+  }
+
+  let monthlyRate = annualRate / 100 / 12;
+  let payments = years * 12;
+  let monthlyPayment;
+
+  if (monthlyRate === 0) {
+    monthlyPayment = loan / payments;
+  } else {
+    let factor = Math.pow(1 + monthlyRate, payments);
+    monthlyPayment =
+      loan * monthlyRate * factor / (factor - 1);
+  }
+
+  result.textContent =
+    "Monthly Payment: $" + monthlyPayment.toFixed(2);
+}
+</script>
+
+<footer>
+  <p>&copy; 2026 SmartShop Online Store</p>
+</footer>
+
+</body>
+</html>
