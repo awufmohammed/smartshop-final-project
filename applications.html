@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Applications | SmartShop</title>
   <link rel="stylesheet" href="styles.css">
+
   <style>
     .app-navigation {
       display: flex;
@@ -14,16 +15,22 @@
       background: #142c49;
       padding: 15px;
     }
+
     .app-navigation a {
       color: white;
       text-decoration: none;
     }
-    .app-navigation a:hover { text-decoration: underline; }
+
+    .app-navigation a:hover {
+      text-decoration: underline;
+    }
+
     .apps-container {
       max-width: 1000px;
       margin: 35px auto;
       padding: 20px;
     }
+
     .app-card {
       background: white;
       color: #222;
@@ -32,11 +39,13 @@
       margin-bottom: 25px;
       box-shadow: 0 2px 12px #0002;
     }
+
     .app-card label {
       display: block;
       margin-top: 12px;
       font-weight: bold;
     }
+
     .app-card input {
       display: block;
       width: 100%;
@@ -47,6 +56,7 @@
       border: 1px solid #aaa;
       border-radius: 6px;
     }
+
     .app-card button,
     .app-card .app-link {
       display: inline-block;
@@ -58,15 +68,24 @@
       text-decoration: none;
       cursor: pointer;
     }
+
+    .app-card button:hover,
+    .app-card .app-link:hover {
+      background: #244b78;
+    }
+
     .result {
       margin-top: 15px;
       font-weight: bold;
     }
   </style>
 </head>
+
 <body>
+
   <header>
     <h1>SmartShop Online Store</h1>
+
     <nav class="app-navigation">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -77,103 +96,212 @@
   </header>
 
   <main class="apps-container">
+
     <h2>My JavaScript Applications</h2>
-    <p>Explore three interactive applications
-    created using HTML, CSS, and JavaScript.</p>
+
+    <p>
+      Explore four interactive applications
+      created using HTML, CSS, and JavaScript.
+    </p>
+
+    <!-- APPLICATION 1: MPG CALCULATOR -->
 
     <section class="app-card">
       <h3>1. MPG Calculator</h3>
-      <p>This application calculates vehicle fuel
-      efficiency by dividing miles traveled by
-      gallons of gasoline used.</p>
+
+      <p>
+        This application calculates vehicle fuel
+        efficiency by dividing miles traveled by
+        gallons of gasoline used.
+      </p>
+
       <a class="app-link" href="mpg.html">
         Open MPG Calculator
       </a>
     </section>
 
+    <!-- APPLICATION 2: SHOPPING CALCULATOR -->
+
     <section class="app-card">
       <h3>2. Shopping Price Calculator</h3>
-      <p>Calculate the total cost of a product
-      based on its price and quantity.</p>
+
+      <p>
+        Calculate the total cost of a product
+        based on its price and quantity.
+      </p>
 
       <label for="price">Product Price ($)</label>
-      <input type="number" id="price"
-             min="0" step="0.01" placeholder="25">
+
+      <input
+        type="number"
+        id="price"
+        min="0"
+        step="0.01"
+        placeholder="25"
+      >
 
       <label for="quantity">Quantity</label>
-      <input type="number" id="quantity"
-             min="1" step="1" placeholder="3">
+
+      <input
+        type="number"
+        id="quantity"
+        min="1"
+        step="1"
+        placeholder="3"
+      >
 
       <button type="button" onclick="calculateTotal()">
         Calculate Total
       </button>
+
       <p id="totalResult" class="result"
          aria-live="polite"></p>
     </section>
 
+    <!-- APPLICATION 3: DISCOUNT CALCULATOR -->
+
     <section class="app-card">
       <h3>3. Discount Calculator</h3>
-      <p>Calculate how much money you save
-      and the final price after a discount.</p>
 
-      <label for="originalPrice">Original Price ($)</label>
-      <input type="number" id="originalPrice"
-             min="0" step="0.01" placeholder="100">
+      <p>
+        Calculate how much money you save
+        and the final price after a discount.
+      </p>
 
-      <label for="discount">Discount (%)</label>
-      <input type="number" id="discount"
-             min="0" max="100" step="0.01"
-             placeholder="20">
+      <label for="originalPrice">
+        Original Price ($)
+      </label>
+
+      <input
+        type="number"
+        id="originalPrice"
+        min="0"
+        step="0.01"
+        placeholder="100"
+      >
+
+      <label for="discount">
+        Discount (%)
+      </label>
+
+      <input
+        type="number"
+        id="discount"
+        min="0"
+        max="100"
+        step="0.01"
+        placeholder="20"
+      >
 
       <button type="button" onclick="calculateDiscount()">
         Calculate Discount
       </button>
+
       <p id="discountResult" class="result"
          aria-live="polite"></p>
     </section>
+
+    <!-- APPLICATION 4: MORTGAGE CALCULATOR -->
+
+    <section class="app-card">
+      <h3>4. Mortgage Calculator</h3>
+
+      <p>
+        This application calculates estimated
+        monthly mortgage payments based on
+        the loan amount, annual interest rate,
+        and loan term.
+      </p>
+
+      <a class="app-link" href="mortgage.html">
+        Open Mortgage Calculator
+      </a>
+    </section>
+
   </main>
 
-  <footer><p>SmartShop Online Store</p></footer>
+  <footer>
+    <p>SmartShop Online Store</p>
+  </footer>
 
   <script>
-    function calculateTotal() {
-      let price = Number(document.getElementById("price").value);
-      let quantity = Number(document.getElementById("quantity").value);
-      let result = document.getElementById("totalResult");
 
-      if (document.getElementById("price").value === "" ||
-          document.getElementById("quantity").value === "" ||
-          !Number.isFinite(price) || price < 0 ||
-          !Number.isInteger(quantity) || quantity < 1) {
-        result.textContent = "Enter a valid price and quantity.";
+    // APPLICATION 2: SHOPPING PRICE CALCULATOR
+
+    function calculateTotal() {
+
+      let priceInput =
+        document.getElementById("price").value;
+
+      let quantityInput =
+        document.getElementById("quantity").value;
+
+      let price = Number(priceInput);
+      let quantity = Number(quantityInput);
+
+      let result =
+        document.getElementById("totalResult");
+
+      if (
+        priceInput === "" ||
+        quantityInput === "" ||
+        !Number.isFinite(price) ||
+        price < 0 ||
+        !Number.isInteger(quantity) ||
+        quantity < 1
+      ) {
+        result.textContent =
+          "Enter a valid price and quantity.";
         return;
       }
 
       let total = price * quantity;
-      result.textContent = "Total Price: $" + total.toFixed(2);
+
+      result.textContent =
+        "Total Price: $" + total.toFixed(2);
     }
 
-    function calculateDiscount() {
-      let price = Number(document.getElementById("originalPrice").value);
-      let discount = Number(document.getElementById("discount").value);
-      let result = document.getElementById("discountResult");
+    // APPLICATION 3: DISCOUNT CALCULATOR
 
-      if (document.getElementById("originalPrice").value === "" ||
-          document.getElementById("discount").value === "" ||
-          !Number.isFinite(price) || price < 0 ||
-          !Number.isFinite(discount) ||
-          discount < 0 || discount > 100) {
-        result.textContent = "Enter a valid price and discount (0-100%).";
+    function calculateDiscount() {
+
+      let priceInput =
+        document.getElementById("originalPrice").value;
+
+      let discountInput =
+        document.getElementById("discount").value;
+
+      let price = Number(priceInput);
+      let discount = Number(discountInput);
+
+      let result =
+        document.getElementById("discountResult");
+
+      if (
+        priceInput === "" ||
+        discountInput === "" ||
+        !Number.isFinite(price) ||
+        price < 0 ||
+        !Number.isFinite(discount) ||
+        discount < 0 ||
+        discount > 100
+      ) {
+        result.textContent =
+          "Enter a valid price and discount (0-100%).";
         return;
       }
-      
+
       let savings = price * discount / 100;
+
       let finalPrice = price - savings;
 
       result.textContent =
         "You Save: $" + savings.toFixed(2) +
         " | Final Price: $" + finalPrice.toFixed(2);
     }
+
   </script>
+
 </body>
 </html>
+
